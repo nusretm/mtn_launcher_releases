@@ -33,4 +33,4 @@ Consumers must select a **compatible, authorized** version, not blindly download
 
 See [release preparation and verification policy](docs/RELEASE_POLICY.md).
 
-> **Migration note:** This repository was renamed from `mtn_launcher_releases`. Legacy MTN Launcher releases, tags or branches must not be interpreted as RemVibe releases. Legacy cleanup is a separate explicitly reviewed action; no existing release is republished or relabeled automatically.
+> **Migration status:** This repository was renamed from `mtn_launcher_releases`. Old MTN Launcher releases, tags and branches are being retired as part of the user-approved reset. Until deletion is verified, legacy artifacts must not be treated as RemVibe releases.
