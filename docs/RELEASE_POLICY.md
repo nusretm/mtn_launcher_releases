@@ -25,4 +25,4 @@ This **public** GitHub repository is the artifact distribution endpoint only. So
 
 ## Repository reset boundary
 
-The legacy `mtn_launcher_releases` README has been replaced on this preparation branch. Historical MTN Launcher published releases/tags and the old documentation branch are **not** deleted by this preparation. Removing them is a separate, potentially disruptive operation that needs asset/consumer impact verification and explicit confirmation.
+The user has approved clearing the old `mtn_launcher_releases` content. Reset is complete only after the legacy MTN Launcher prerelease/assets/tag and old documentation branch are confirmed removed. Deletion changes existing download URLs. No legacy binary is eligible to be relabeled as a RemVibe release.
