@@ -1,11 +1,36 @@
-# MTN Launcher
+# RemVibe Releases
 
-**MTN Launcher** is a modern Minecraft launcher built with Flutter, designed to make managing and playing Minecraft simple.
+Public binary distribution repository for approved RemVibe application and independently deployable component releases.
 
-Create and customize game profiles, choose Minecraft versions and mod loaders, manage mods and resource packs, and switch between Minecraft accounts — all in one place.
+**This repository distributes release artifacts; it is not a source-code, build-definition, or private-identity repository.**
 
-## Download
+## Repository responsibilities
 
-**[Download the latest MTN Launcher App](https://github.com/nusretm/mtn_launcher_releases/releases)**
+| Repository | Responsibility |
+| --- | --- |
+| `nusretm/remvibe_networking` | Owns Rust Networking source and FFI ABI/build |
+| `nusretm/remvibe_updates` | Owns the central project catalog and authorized release-selection metadata |
+| `nusretm/remvibe_update_center` | Owns release verification, installation, update and recovery orchestration |
+| **`nusretm/remvibe_releases`** | Hosts reviewed, versioned downloadable GitHub Release assets |
 
-*The first MTN Launcher App release is not available yet. The download link will be updated to the latest app release when it is published.*
+## First planned component
+
+**RemVibe Networking — Windows x64 native FFI DLL** (`remvibe_networking_ffi.dll`).
+
+The first release will be prepared manually from an immutable `remvibe_networking` source commit, with exact file digests, platform/architecture, ABI compatibility and an approved authorization/signature contract. The release has **not** been created by this repository preparation step.
+
+Consumers must select a **compatible, authorized** version, not blindly download the newest asset. A downloaded DLL is verified before it is exposed at a stable local path. An in-use native library is not replaced in place; its host process must be quiesced/restarted as required by the Update Center component-update contract.
+
+## Security and distribution limits
+
+- **Never publish RemVibe Update Center Server source, Server AOT release, Noise NK private key, credential, signing key or private operational data here.**
+- Public GitHub visibility means uploaded release assets can be downloaded by anyone.
+- A SHA-256 checksum detects accidental or malicious modification only when the expected hash is authenticated. It does **not** prove publisher identity by itself.
+- Follow the accepted release-signature, provenance and package validation mechanisms in Update Center; do not introduce an incompatible manifest schema in this repository.
+- No automatic installation of unsigned or unapproved pilot artifacts.
+
+## Publication
+
+See [release preparation and verification policy](docs/RELEASE_POLICY.md).
+
+> **Migration status:** This repository was renamed from `mtn_launcher_releases`. Old MTN Launcher releases, tags and branches are being retired as part of the user-approved reset. Until deletion is verified, legacy artifacts must not be treated as RemVibe releases.
